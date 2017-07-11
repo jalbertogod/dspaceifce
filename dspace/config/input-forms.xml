@@ -40,6 +40,39 @@
      <page number="1">
        <field>
          <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoAC</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Selo AC</label>
+         <input-type value-pairs-name="common_boolean">list</input-type>
+         <visibility otherwise="readonly">workflow</visibility>
+         <required></required>
+       </field>
+       
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoCT</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Selo CT</label>
+         <input-type value-pairs-name="common_boolean">list</input-type>
+         <visibility otherwise="readonly">workflow</visibility>
+         <required></required>
+       </field>
+       
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoDI</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Selo DI</label>
+         <input-type value-pairs-name="common_boolean">list</input-type>
+         <visibility otherwise="readonly">workflow</visibility>
+         <required></required>
+       </field>
+       
+       <field>
+         <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
          <dc-qualifier>author</dc-qualifier>
          <repeatable>true</repeatable>
@@ -233,6 +266,17 @@ it, please enter the types and the actual numbers or codes.</hint>
  <!-- stores the associated stored-values in the database.                  -->
 
  <form-value-pairs>
+   <value-pairs value-pairs-name="common_boolean" dc-term="description">
+     <pair>
+       <displayed-value>Sim.</displayed-value>
+       <stored-value>sim</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Não.</displayed-value>
+       <stored-value>não</stored-value>
+     </pair>
+   </value-pairs>
+   
    <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
      <pair>
        <displayed-value>ISSN</displayed-value>
