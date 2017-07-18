@@ -20,17 +20,17 @@ import java.util.List;
  */
 public interface LikeService {
 
-    
-    public Like createNewLike(Context c, Like like);
-
+   
+    public Like createNewLike(Context c, Like like)  throws SQLException;
+    /*
     public void removeLike(Context c, Like like) throws SQLException;
 
 
-    public  Like getLike(Context c, int likeID) throws SQLException;
+    public Like getLike(Context c, int likeID) throws SQLException;
 
   
     public Like getLike(Context c, Like like) throws SQLException;
     
-
+*/
     
 }

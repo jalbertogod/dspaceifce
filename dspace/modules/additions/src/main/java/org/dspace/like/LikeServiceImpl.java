@@ -20,7 +20,7 @@ import org.springframework.beans.factory.annotation.Required;
 public class LikeServiceImpl implements LikeService {
 
     @Autowired(required = true)
-    protected LikeDAO likeDAO;
+    protected  LikeDAO likeDAO;
 
 
    
@@ -31,13 +31,15 @@ public class LikeServiceImpl implements LikeService {
     }
 
     /** Service Methods */
+   
     @Override
-    public Like createNewLike(Context c, Like like){
-        return createNewLike(c, like);
+    public Like createNewLike(Context c, Like like)  throws SQLException{
+    	likeDAO.save(c, like);
+        return  null;
     }
 
    
-
+    /*
 
     @Override
     public void removeLike(Context c, Like like) throws SQLException {
@@ -60,6 +62,6 @@ public class LikeServiceImpl implements LikeService {
         return likeDAO.findByLike(c, like);
     }
 
-
+*/
     
 }

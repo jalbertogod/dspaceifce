@@ -17,9 +17,10 @@
            http://www.springframework.org/schema/context/spring-context-2.5.xsd"
     default-autowire-candidates="*Service,*DAO,javax.sql.DataSource">
 
-    <context:annotation-config /> <!-- allows us to use spring annotations in beans -->
-	<bean class="org.dspace.like.dao.impl.LikeDAOImpl"/>
-    <bean id="likeServiceFactory" class="org.dspace.like.factory.LikeServiceFactoryImpl"/>
-    <bean class="org.dspace.like.LikeServiceImpl"/>
+    <context:annotation-config /> <!-- allows us to use spring annotations in beans  <bean class="org.dspace.like.dao.impl.LikeDAOImpl"/> <bean class="org.dspace.like.LikeServiceImpl"/>-->
+
+	
+    
+    
 
 </beans>

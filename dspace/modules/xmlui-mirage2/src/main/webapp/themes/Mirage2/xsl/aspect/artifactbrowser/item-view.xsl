@@ -315,10 +315,10 @@
          <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
 		
 		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='Sim.'">
-	       		<img src="/themes/Mirage2/images/boneco.png" alt="| Selo AC: Sim |" title="Selo de Acessibilidade" height="55" width="55" style="margin-right:0.5em;"/> 
+	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Sim |" title="Selo de Acessibilidade" height="55" width="55" style="margin-right:0.5em;"/> 
 	    	</xsl:if>
 	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='Não.'">
-	       		<img src="/themes/Mirage2/images/boneco.png" alt="| Selo AC: Não |" title="Selo de Acessibilidade" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/>  
+	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Não |" title="Selo de Acessibilidade" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/>  
 	    	</xsl:if>
 
 	  </xsl:if>
