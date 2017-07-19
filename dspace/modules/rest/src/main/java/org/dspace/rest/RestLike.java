@@ -51,10 +51,10 @@ public class RestLike {
         try {
             context = Resource.createContext();
             EPerson ePerson = context.getCurrentUser();
-            Like  like = new Like();
+         
             
-            likeService.createNewLike(context,like);
-            
+            likeService.createNewLike(context,"sdf");
+           
 
             if(ePerson != null) {
                 //DB EPerson needed since token won't have full info, need context

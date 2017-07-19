@@ -35,7 +35,7 @@ public class Like implements ReloadableEntity<Integer> {
     @Temporal(TemporalType.TIMESTAMP)
     private Date likeDate;
 
-    public Like()
+    protected Like()
     {
 
     }

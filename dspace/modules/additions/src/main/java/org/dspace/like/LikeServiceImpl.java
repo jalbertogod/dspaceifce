@@ -11,6 +11,7 @@ import org.dspace.like.dao.LikeDAO;
 import org.dspace.like.service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -18,7 +19,7 @@ import org.springframework.beans.factory.annotation.Required;
  * @author Alberto 
 */
 public class LikeServiceImpl implements LikeService {
-
+	private static Logger log = Logger.getLogger(LikeServiceImpl.class);
     @Autowired(required = true)
     protected  LikeDAO likeDAO;
 
@@ -33,8 +34,10 @@ public class LikeServiceImpl implements LikeService {
     /** Service Methods */
    
     @Override
-    public Like createNewLike(Context c, Like like)  throws SQLException{
-    	likeDAO.save(c, like);
+    public Like createNewLike(Context c, String like )  throws SQLException{
+    	Like like2 = new Like();
+    	like2 =likeDAO.create(c, like2);
+    	likeDAO.save(c, like2);
         return  null;
     }
 

@@ -21,7 +21,7 @@ import java.util.List;
 public interface LikeService {
 
    
-    public Like createNewLike(Context c, Like like)  throws SQLException;
+    public Like createNewLike(Context c, String like)  throws SQLException;
     /*
     public void removeLike(Context c, Like like) throws SQLException;
 
