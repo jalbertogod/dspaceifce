@@ -126,9 +126,9 @@
                     <xsl:call-template name="itemSummaryView-DIM-abstract"/>
                     <xsl:call-template name="itemSummaryView-DIM-URI"/>
                     <xsl:call-template name="itemSummaryView-collections"/>
-                    <xsl:call-template name="itemSummaryView-DIM-seloDI"/>
                     <xsl:call-template name="itemSummaryView-DIM-seloAC"/>
                     <xsl:call-template name="itemSummaryView-DIM-seloCT"/>
+		    <xsl:call-template name="itemSummaryView-DIM-seloDI"/>
                 </div>
             </div>
         </div>
@@ -292,53 +292,7 @@
             </div>
         </xsl:if>
     </xsl:template>
-<xsl:template name="itemSummaryView-DIM-seloDI">
-        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]">
-            <div class="simple-item-view-date word-break item-page-field-wrapper table">
-                <h5>
-                    <i18n:text>xmlui.dri2xhtml.METS-1.0.item-seloDI</i18n:text>
-                </h5>
-                <xsl:for-each select="dim:field[@element='description' and @qualifier='materialValidadoDI']">
-                    <xsl:copy-of select="substring(./node(),1,10)"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='description' and @qualifier='materialValidadoDI']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-            </div>
-        </xsl:if>
-    </xsl:template>   
-    
-    <xsl:template name="itemSummaryView-DIM-seloAC">
-        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
-            <div class="simple-item-view-date word-break item-page-field-wrapper table">
-                <h5>
-                    <i18n:text>xmlui.dri2xhtml.METS-1.0.item-seloAC</i18n:text>
-                </h5>
-                <xsl:for-each select="dim:field[@element='description' and @qualifier='materialValidadoAC']">
-                    <xsl:copy-of select="substring(./node(),1,10)"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='description' and @qualifier='materialValidadoAC']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-            </div>
-        </xsl:if>
-    </xsl:template>   
-    
-    <xsl:template name="itemSummaryView-DIM-seloCT">
-        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]">
-            <div class="simple-item-view-date word-break item-page-field-wrapper table">
-                <h5>
-                    <i18n:text>xmlui.dri2xhtml.METS-1.0.item-seloCT</i18n:text>
-                </h5>
-                <xsl:for-each select="dim:field[@element='description' and @qualifier='materialValidadoCT']">
-                    <xsl:copy-of select="substring(./node(),1,10)"/>
-                    <xsl:if test="count(following-sibling::dim:field[@element='description' and @qualifier='materialValidadoCT']) != 0">
-                        <br/>
-                    </xsl:if>
-                </xsl:for-each>
-            </div>
-        </xsl:if>
-    </xsl:template>   
+
 
     <xsl:template name="itemSummaryView-DIM-date">
         <xsl:if test="dim:field[@element='date' and @qualifier='issued' and descendant::text()]">
@@ -355,6 +309,48 @@
             </div>
         </xsl:if>
     </xsl:template>
+    
+    
+    <xsl:template name="itemSummaryView-DIM-seloAC">
+         <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
+		
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">
+	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Sim |" title="Selo de Acessibilidade" height="55" width="55" style="margin-right:0.5em;"/> 
+	    	</xsl:if>
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='não'">
+	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Não |" title="Selo de Acessibilidade" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/>  
+	    	</xsl:if>
+
+	  </xsl:if>
+    </xsl:template>
+
+    <xsl:template name="itemSummaryView-DIM-seloCT">
+        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]">
+				
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='sim'">
+	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Sim |" title="Selo de Conteúdo" height="55" width="55" style="margin-right:0.5em;"/> 
+	    	</xsl:if>
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='não'">
+	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Não |" title="Selo de Conteúdo" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
+	</xsl:if>
+
+	 </xsl:if>
+    </xsl:template>
+	
+    <xsl:template name="itemSummaryView-DIM-seloDI">
+        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]">
+                  
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='sim'">
+               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Sim |" title="Selo de Design Institucional" height="55" width="55" style="margin-right:0.5em;"/>  
+            	</xsl:if>
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='não'">
+               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Não |" title="Selo de Design Institucional" height="55" width="55"  style="filter:grayscale(100%); margin-right:0.5em;"/>  
+            	</xsl:if>
+
+         </xsl:if>    
+    </xsl:template>
+    
+    
 
     <xsl:template name="itemSummaryView-show-full">
         <div class="simple-item-view-show-full item-page-field-wrapper table">
