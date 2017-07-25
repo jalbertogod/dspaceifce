@@ -10,7 +10,6 @@ package org.dspace.like.dao;
 import org.dspace.core.Context;
 import org.dspace.core.GenericDAO;
 import org.dspace.like.Like;
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,7 +22,5 @@ import java.util.List;
  */
 public interface LikeDAO extends GenericDAO<Like>
 {
-    public Like findByLike(Context context, Like like) throws SQLException;
-    
 
 }

@@ -25,11 +25,11 @@ $.ajax({
 	      type: 'GET',
 	      contentType: 'application/json',
 	      //dataType: 'json',
-	      data: {},
-	      url:'/rest/status',
+	      data: {handle:'123456789/3'},
+	      url:'/rest/like/set',
 
 	      success: function(retorno){
-	    	  			atualizarIconsSolicit(elemento,String(retorno.tipoSolicitacaoInterprete));
+	    
 		      	},
 		        error: function(xhr, textStatus, error){
 		           console.log(xhr);

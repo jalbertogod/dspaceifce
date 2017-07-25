@@ -12,6 +12,7 @@ import org.dspace.like.Like;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import org.dspace.eperson.EPerson;
 
 /**
  *
@@ -21,7 +22,9 @@ import java.util.List;
 public interface LikeService {
 
    
-    public Like createNewLike(Context c, String like)  throws SQLException;
+    public Like createNewLike(Context c, String handle1, String handle2,EPerson ePerson)  throws SQLException;
+
+    
     /*
     public void removeLike(Context c, Like like) throws SQLException;
 

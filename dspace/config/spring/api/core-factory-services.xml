@@ -48,5 +48,4 @@
     <!--<bean id="workflowServiceFactory" class="org.dspace.xmlworkflow.factory.XmlWorkflowServiceFactoryImpl"/>-->
     <bean id="likeServiceFactory" class="org.dspace.like.factory.LikeServiceFactoryImpl"/>
 
-
 </beans>

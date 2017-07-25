@@ -35,35 +35,38 @@ public class RestLike {
      *
      * okay: true | false
      * authenticated: true | false
-     * epersonEMAIL: user@example.com
-     * epersonNAME: John Doe
+     * epersonEMAIL: jalbertogod@gmail.com
+     * epersonNAME: Alberto
      * @param headers
      *            Request header which contains the header named
      *            "rest-dspace-token" containing the token as value.
      * @return status
      */
     @GET
-    @Path("/status")
+    @Path("/set/{handle1}/set/{handle2}")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public LikeRESP status(@Context HttpHeaders headers) throws UnsupportedEncodingException {
-        org.dspace.core.Context context = null;
+    public LikeRESP set(@Context HttpHeaders headers,@PathParam("handle1") String handle1,@PathParam("handle2") String handle2) throws UnsupportedEncodingException {
+        org.dspace.core.Context context = null;	
 
         try {
             context = Resource.createContext();
             EPerson ePerson = context.getCurrentUser();
-         
-            
-            likeService.createNewLike(context,"sdf");
            
-
+            likeService.createNewLike(context,handle1,handle2,ePerson);
+           
+           // Bookmark bookmark = bookmarkService.create(context);
+          //  bookmark.setTitle("Teste");
             if(ePerson != null) {
                 //DB EPerson needed since token won't have full info, need context
                 EPerson dbEPerson = epersonService.findByEmail(context, ePerson.getEmail());
 
                 LikeRESP likeRESP = new LikeRESP(dbEPerson.getEmail(), dbEPerson.getFullName());
+                context.complete();
                 return likeRESP;
+            }else{
+            	 context.complete();
             }
-
+           
         } catch (ContextException e)
         {
             Resource.processException("Like context error: " + e.getMessage(), context);
