@@ -126,9 +126,9 @@
                     <xsl:call-template name="itemSummaryView-DIM-abstract"/>
                     <xsl:call-template name="itemSummaryView-DIM-URI"/>
                     <xsl:call-template name="itemSummaryView-collections"/>
-                    <xsl:call-template name="itemSummaryView-DIM-seloDI"/>
                     <xsl:call-template name="itemSummaryView-DIM-seloAC"/>
                     <xsl:call-template name="itemSummaryView-DIM-seloCT"/>
+		    <xsl:call-template name="itemSummaryView-DIM-seloDI"/>
                 </div>
             </div>
         </div>
@@ -311,13 +311,13 @@
     </xsl:template>
     
     
-        <xsl:template name="itemSummaryView-DIM-seloAC">
+    <xsl:template name="itemSummaryView-DIM-seloAC">
          <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
 		
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='Sim.'">
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">
 	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Sim |" title="Selo de Acessibilidade" height="55" width="55" style="margin-right:0.5em;"/> 
 	    	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='Não.'">
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='não'">
 	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Não |" title="Selo de Acessibilidade" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/>  
 	    	</xsl:if>
 
@@ -327,11 +327,11 @@
     <xsl:template name="itemSummaryView-DIM-seloCT">
         <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]">
 				
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='Sim.'">
-	       		<img src="/themes/Mirage2/images/livro.png" alt="| Selo CT: Sim |" title="Selo de Conteúdo" height="55" width="55" style="margin-right:0.5em;"/> 
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='sim'">
+	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Sim |" title="Selo de Conteúdo" height="55" width="55" style="margin-right:0.5em;"/> 
 	    	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='Não.'">
-	       		<img src="/themes/Mirage2/images/livro.png" alt="| Selo CT: Não |" title="Selo de Conteúdo" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='não'">
+	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Não |" title="Selo de Conteúdo" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
 	</xsl:if>
 
 	 </xsl:if>
@@ -340,11 +340,11 @@
     <xsl:template name="itemSummaryView-DIM-seloDI">
         <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]">
                   
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='Sim.'">
-               		<img src="/themes/Mirage2/images/profs.png" alt="| Selo DI: Sim |" title="Selo de Design Institucional" height="55" width="55" style="margin-right:0.5em;"/>  
+		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='sim'">
+               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Sim |" title="Selo de Design Institucional" height="55" width="55" style="margin-right:0.5em;"/>  
             	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='Não.'">
-               		<img src="/themes/Mirage2/images/profs.png" alt="| Selo DI: Não |" title="Selo de Design Institucional" height="55" width="55"  style="filter:grayscale(100%); margin-right:0.5em;"/>  
+	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='não'">
+               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Não |" title="Selo de Design Institucional" height="55" width="55"  style="filter:grayscale(100%); margin-right:0.5em;"/>  
             	</xsl:if>
 
          </xsl:if>    
