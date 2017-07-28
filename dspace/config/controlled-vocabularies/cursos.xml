@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Eixos Tecnológicos
+-->
+
+<node id="cursosTecnologia" label="CURSOS TÉCNICOS E CURSOS SUPERIORES DE TECNOLOGIA">
+	<isComposedBy>
+		<node id="cursosSuperiores" label="CURSOS SUPERIORES DE TECNOLOGIA">
+			<isComposedBy>
+				<node id="100" label="Agrimensura" />
+				<node id="101" label="Agroecologia" />
+				<node id="102" label="Agroindústria" />
+				<node id="103" label="Agronegócio" />
+				<node id="104" label="Alimentos" />
+				<node id="105" label="Análise e Desenvolvimento de Sistemas" />
+				<node id="106" label="Aquicultura" />
+				<node id="107" label="Automação Industrial" />
+				<node id="108" label="Banco de Dados" />
+				<node id="109" label="Biocombustíveis" />
+				<node id="110" label="Cafeicultura" />
+				<node id="111" label="Comércio Exterior" />
+				<node id="112" label="Comunicação Assistiva" />
+				<node id="113" label="Comunicações Aeronáuticas" />
+				<node id="114" label="Conservação e Restauro" />
+				<node id="115" label="Construção de Edifícios" />
+				<node id="116" label="Construção Naval" />
+				<node id="117" label="Controle de Obras" />
+				<node id="118" label="Design de Interiores" />
+				<node id="119" label="Design de Moda" />
+				<node id="120" label="Design de Produto" />
+				<node id="121" label="Design Gráfico" />
+				<node id="122" label="Eletrônica Industrial" />
+				<node id="123" label="Eletrotécnica Industrial" />
+				<node id="124" label="Estradas" />
+				<node id="125" label="Eventos" />
+				<node id="126" label="Fabricação Mecânica" />
+				<node id="127" label="Fotografia" />
+				<node id="128" label="Fotointeligência" />
+				<node id="129" label="Gastronomia" />
+				<node id="130" label="Geoprocessamento" />
+				<node id="131" label="Gerenciamento de Tráfego Aéreo" />
+				<node id="132" label="Gestão Ambiental" />
+				<node id="133" label="Gestão Comercial" />
+				<node id="134" label="Gestão da Produção Industrial" />
+				<node id="135" label="Gestão da Qualidade" />
+				<node id="136" label="Gestão da Tecnologia da Informação" />
+				<node id="137" label="Gestão de Cooperativas" />
+				<node id="138" label="Gestão de Recursos Humanos" />
+				<node id="139" label="Gestão de Segurança Privada" />
+				<node id="140" label="Gestão de Telecomunicações" />
+				<node id="141" label="Gestão de Turismo" />
+				<node id="142" label="Gestão Desportiva e de Lazer" />
+				<node id="143" label="Gestão e Manutenção Aeronáutica" />
+				<node id="144" label="Gestão Financeira" />
+				<node id="145" label="Gestão Hospitalar" />
+				<node id="146" label="Gestão Portuária" />
+				<node id="147" label="Gestão Pública" />
+				<node id="148" label="Horticultura" />
+				<node id="149" label="Hotelaria" />
+				<node id="150" label="Irrigação e Drenagem" />
+				<node id="151" label="Jogos Digitais" />
+				<node id="152" label="Laticínios" />
+				<node id="153" label="Logística" />
+				<node id="154" label="Manutenção de Aeronaves" />
+				<node id="155" label="Manutenção Industrial" />
+				<node id="156" label="Marketing" />
+				<node id="157" label="Material de Construção" />
+				<node id="158" label="Mecânica de Precisão" />
+				<node id="159" label="Mecatrônica Industrial" />
+				<node id="160" label="Meteorologia Aeronáutica" />
+				<node id="161" label="Negócios Imobiliários" />
+				<node id="162" label="Obras Hidráulicas" />
+				<node id="163" label="Oftálmica" />
+				<node id="164" label="Papel e Celulose" />
+				<node id="165" label="Petróleo e Gás" />
+				<node id="166" label="Pilotagem Profissional de Aeronaves" />
+				<node id="167" label="Polímeros" />
+				<node id="168" label="Processamento de Carnes" />
+				<node id="169" label="Processos Ambientais" />
+				<node id="170" label="Processos Escolares" />
+				<node id="171" label="Processos Gerenciais" />
+				<node id="172" label="Processos Metalúrgicos" />
+				<node id="173" label="Processos Químicos" />
+				<node id="174" label="Produção Audiovisual" />
+				<node id="175" label="Produção Cênica" />
+				<node id="176" label="Produção Cultural" />
+				<node id="177" label="Produção de Cachaça" />
+				<node id="178" label="Produção de Grãos" />
+				<node id="179" label="Produção de Vestuário" />
+				<node id="180" label="Produção Fonográfica" />
+				<node id="181" label="Produção Gráfica" />
+				<node id="182" label="Produção Joalheira" />
+				<node id="183" label="Produção Moveleira" />
+				<node id="184" label="Produção Multimídia" />
+				<node id="185" label="Produção Pesqueira" />
+				<node id="186" label="Produção Publicitária" />
+				<node id="187" label="Produção Sucroalcooleira" />
+				<node id="188" label="Produção Têxtil" />
+				<node id="189" label="Radiologia" />
+				<node id="190" label="Redes de Computadores" />
+				<node id="191" label="Redes de Telecomunicações" />
+				<node id="192" label="Rochas Ornamentais" />
+				<node id="193" label="Saneamento Ambiental" />
+				<node id="194" label="Secretariado" />
+				<node id="195" label="Segurança da Informação" />
+				<node id="196" label="Segurança no Trabalho" />
+				<node id="197" label="Segurança no Trânsito" />
+				<node id="198" label="Segurança Pública" />
+				<node id="199" label="Serviços Penais" />
+				<node id="200" label="Silvicultura" />
+				<node id="201" label="Sistemas Biomédicos" />
+				<node id="202" label="Sistemas de Armas" />
+				<node id="203" label="Sistemas de Navegação Fluvial" />
+				<node id="204" label="Sistemas de Telecomunicações" />
+				<node id="205" label="Sistemas Elétricos" />
+				<node id="206" label="Sistemas para Internet" />
+				<node id="207" label="Telemática" />
+				<node id="208" label="Transporte Aéreo" />
+				<node id="209" label="Transporte Terrestre" />
+				<node id="210" label="Viticultura e Enologia" />
+			</isComposedBy>
+		</node>
+		
+		<node id="cursosTecnicos" label="CURSOS TÉCNICOS">
+			<isComposedBy>
+				<node id="210" label="Técnico Aeroportuário" />
+				<node id="211" label="Técnico em Ações de Comandos" />
+				<node id="212" label="Técnico em Açúcar e Álcool" />
+				<node id="213" label="Técnico em Administração" />
+				<node id="214" label="Técnico em Agenciamento de Viagem" />
+				<node id="215" label="Técnico em Agente Comunitário de Saúde" />
+				<node id="216" label="Técnico em Agricultura" />
+				<node id="217" label="Técnico em Agrimensura" />
+				<node id="218" label="Técnico em Agroecologia" />
+				<node id="219" label="Técnico em Agroindústria" />
+				<node id="220" label="Técnico em Agronegócio" />
+				<node id="221" label="Técnico em Agropecuária" />
+				<node id="222" label="Técnico em Alimentação Escolar" />
+				<node id="223" label="Técnico em Alimentos" />
+				<node id="224" label="Técnico em Análises Clínicas" />
+				<node id="225" label="Técnico em Análises Químicas" />
+				<node id="226" label="Técnico em Apicultura" />
+				<node id="227" label="Técnico em Aquicultura" />
+				<node id="228" label="Técnico em Armamento de Aeronaves" />
+				<node id="229" label="Técnico em Arte Circense" />
+				<node id="230" label="Técnico em Arte Dramática" />
+				<node id="231" label="Técnico em Artes Visuais" />
+				<node id="232" label="Técnico em Artesanato" />
+				<node id="233" label="Técnico em Artilharia" />
+				<node id="234" label="Técnico em Artilharia Antiaérea" />
+				<node id="235" label="Técnico em Automação Industrial" />
+				<node id="236" label="Técnico em Biblioteca" />
+				<node id="237" label="Técnico em Biocombustíveis" />
+				<node id="238" label="Técnico em Biotecnologia" />
+				<node id="239" label="Técnico em Cafeicultura" />
+				<node id="240" label="Técnico em Calçados" />
+				<node id="241" label="Técnico em Canto" />
+				<node id="242" label="Técnico em Carpintaria" />
+				<node id="243" label="Técnico em Cavalaria" />
+				<node id="244" label="Técnico em Celulose e Papel" />
+				<node id="245" label="Técnico em Cenografia" />
+				<node id="246" label="Técnico em Cerâmica" />
+				<node id="247" label="Técnico em Cervejaria" />
+				<node id="248" label="Técnico em Citopatologia" />
+				<node id="249" label="Técnico em Combate a Incêndio, Resgate e Prevenção de Acidentes de Aviação" />
+				<node id="250" label="Técnico em Comércio" />
+				<node id="251" label="Técnico em Comércio Exterior" />
+				<node id="252" label="Técnico em Composição e Arranjo" />
+				<node id="253" label="Técnico em Computação Gráfica" />
+				<node id="254" label="Técnico em Comunicação Visual" />
+				<node id="255" label="Técnico em Comunicações Aeronáuticas" />
+				<node id="256" label="Técnico em Comunicações Navais" />
+				<node id="257" label="Técnico em Confeitaria" />
+				<node id="258" label="Técnico em Conservação e Restauro" />
+				<node id="259" label="Técnico em Construção Naval" />
+				<node id="260" label="Técnico em Contabilidade" />
+				<node id="261" label="Técnico em Controle Ambiental" />
+				<node id="262" label="Técnico em Controle de Tráfego Aéreo" />
+				<node id="263" label="Técnico em Cooperativismo" />
+				<node id="264" label="Técnico em Cozinha" />
+				<node id="265" label="Técnico em Cuidados de Idosos" />
+				<node id="266" label="Técnico em Curtimento" />
+				<node id="267" label="Técnico em Dança" />
+				<node id="268" label="Técnico em Defesa Civil" />
+				<node id="269" label="Técnico em Desenho de Construção Civil" />
+				<node id="270" label="Técnico em Desenho Militar" />
+				<node id="271" label="Técnico em Design de Calçados" />
+				<node id="272" label="Técnico em Design de Embalagens" />
+				<node id="273" label="Técnico em Design de Interiores" />
+				<node id="274" label="Técnico em Design de Joias" />
+				<node id="275" label="Técnico em Design de Móveis" />
+				<node id="276" label="Técnico em Documentação Musical" />
+				<node id="277" label="Técnico em Edificações" />
+				<node id="278" label="Técnico em Eletricidade e Instrumentos Aeronáuticos" />
+				<node id="279" label="Técnico em Eletroeletrônica" />
+				<node id="280" label="Técnico em Eletromecânica" />
+				<node id="281" label="Técnico em Eletrônica" />
+				<node id="282" label="Técnico em Eletrotécnica" />
+				<node id="283" label="Técnico em Enfermagem" />
+				<node id="284" label="Técnico em Equipamento de Engenharia" />
+				<node id="285" label="Técnico em Equipamentos Biomédicos" />
+				<node id="286" label="Técnico em Equipamentos de Voo" />
+				<node id="287" label="Técnico em Equipamentos Pesqueiros" />
+				<node id="288" label="Técnico em Estética" />
+				<node id="289" label="Técnico em Estradas" />
+				<node id="290" label="Técnico em Estrutura e Pintura de Aeronaves" />
+				<node id="291" label="Técnico em Eventos" />
+				<node id="292" label="Técnico em Fabricação de Instrumentos Musicais" />
+				<node id="293" label="Técnico em Fabricação Mecânica" />
+				<node id="294" label="Técnico em Farmácia" />
+				<node id="295" label="Técnico em Finanças" />
+				<node id="296" label="Técnico em Florestas" />
+				<node id="297" label="Técnico em Forças Especiais" />
+				<node id="298" label="Técnico em Fotointeligência" />
+				<node id="299" label="Técnico em Fruticultura" />
+				<node id="300" label="Técnico em Geodésia e Cartografia" />
+				<node id="301" label="Técnico em Geologia" />
+				<node id="302" label="Técnico em Geoprocessamento" />
+				<node id="303" label="Técnico em Gerência de Saúde" />
+				<node id="304" label="Técnico em Guarda e Segurança" />
+				<node id="305" label="Técnico em Guia de Turismo" />
+				<node id="306" label="Técnico em Hemoterapia" />
+				<node id="307" label="Técnico em Hidrografia" />
+				<node id="308" label="Técnico em Hidrologia" />
+				<node id="309" label="Técnico em Hospedagem" />
+				<node id="310" label="Técnico em Imagem Pessoal" />
+				<node id="311" label="Técnico em Imobilizações Ortopédicas" />
+				<node id="312" label="Técnico em Impressão Offset" />
+				<node id="313" label="Técnico em Impressão Rotográfica e Flexográfica" />
+				<node id="314" label="Técnico em Infantaria" />
+				<node id="315" label="Técnico em Informações Aeronáuticas" />
+				<node id="316" label="Técnico em Informática" />
+				<node id="317" label="Técnico em Informática para Internet" />
+				<node id="318" label="Técnico em Infraestrutura Escolar" />
+				<node id="319" label="Técnico em Instrumento Musical" />
+				<node id="320" label="Técnico em Joalheria" />
+				<node id="321" label="Técnico em Lazer" />
+				<node id="322" label="Técnico em Logística" />
+				<node id="323" label="Técnico em Ludoteca" />
+				<node id="324" label="Técnico em Manobras e Equipamentos de Convés" />
+				<node id="325" label="Técnico em Manutenção Automotiva" />
+				<node id="326" label="Técnico em Manutenção de Aeronaves em Aviônicos" />
+				<node id="327" label="Técnico em Manutenção de Aeronaves em Célula" />
+				<node id="328" label="Técnico em Manutenção de Aeronaves em Grupo Motopropulsor" />
+				<node id="329" label="Técnico em Manutenção e Suporte em Informática" />
+				<node id="330" label="Técnico em Manutenção em Máquinas Pesadas" />
+				<node id="331" label="Técnico em Manutenção Metroferroviária" />
+				<node id="332" label="Técnico em Máquinas Navais" />
+				<node id="333" label="Técnico em Marketing" />
+				<node id="334" label="Técnico em Massoterapia" />
+				<node id="335" label="Técnico em Material Bélico" />
+				<node id="336" label="Técnico em Mecânica" />
+				<node id="337" label="Técnico em Mecânica de Aeronaves" />
+				<node id="338" label="Técnico em Mecânica de Precisão" />
+				<node id="339" label="Técnico em Mecatrônica" />
+				<node id="340" label="Técnico em Meio Ambiente" />
+				<node id="341" label="Técnico em Mergulho" />
+				<node id="342" label="Técnico em Metalurgia" />
+				<node id="343" label="Técnico em Meteorologia" />
+				<node id="344" label="Técnico em Metrologia" />
+				<node id="345" label="Técnico em Mineração" />
+				<node id="346" label="Técnico em Modelagem do Vestuário" />
+				<node id="347" label="Técnico em Montanhismo" />
+				<node id="348" label="Técnico em Móveis" />
+				<node id="349" label="Técnico em Multimeios Didáticos" />
+				<node id="350" label="Técnico em Multimídia" />
+				<node id="351" label="Técnico em Museologia" />
+				<node id="352" label="Técnico em Navegação Fluvial" />
+				<node id="353" label="Técnico em Necropsia" />
+				<node id="354" label="Técnico em Nutrição e Dietética" />
+				<node id="355" label="Técnico em Operação de Radar" />
+				<node id="356" label="Técnico em Operação de Sonar" />
+				<node id="357" label="Técnico em Operações de Engenharia Militar" />
+				<node id="358" label="Técnico em Óptica" />
+				<node id="359" label="Técnico em Oritentação Comunitária" />
+				<node id="360" label="Técnico em Órteses e Próteses" />
+				<node id="361" label="Técnico em Paisagismo" />
+				<node id="362" label="Técnico em Panificação" />
+				<node id="363" label="Técnico em Pesca" />
+				<node id="364" label="Técnico em Petróleo e Gás" />
+				<node id="365" label="Técnico em Petroquímica" />
+				<node id="366" label="Técnico em Plásticos" />
+				<node id="367" label="Técnico em Podologia" />
+				<node id="368" label="Técnico em Portos" />
+				<node id="369" label="Técnico em Pré-Impressão Gráfica" />
+				<node id="370" label="Técnico em Preparação Física e Desportiva Militar" />
+				<node id="371" label="Técnico em Processamento da Madeira" />
+				<node id="372" label="Técnico em Processamento de Pescado" />
+				<node id="373" label="Técnico em Processos Fonográficos" />
+				<node id="374" label="Técnico em Processos Fotográficos" />
+				<node id="375" label="Técnico em Processos Gráficos" />
+				<node id="376" label="Técnico em Produção de Áudio e Vídeo" />
+				<node id="377" label="Técnico em Produção de Materiais Didáticos Bilíngüe em Libras/Língua Portuguesa" />
+				<node id="378" label="Técnico em Produção de Moda" />
+				<node id="379" label="Técnico em Programação de Jogos Digitais" />
+				<node id="380" label="Técnico em Prótese Dentária" />
+				<node id="381" label="Técnico em Publicidade" />
+				<node id="382" label="Técnico em Qualidade" />
+				<node id="383" label="Técnico em Química" />
+				<node id="384" label="Técnico em Rádio e Televisão" />
+				<node id="385" label="Técnico em Radiologia" />
+				<node id="386" label="Técnico em Reabilitação de Dependentes Químicos" />
+				<node id="387" label="Técnico em Reciclagem" />
+				<node id="388" label="Técnico em Recursos Humanos" />
+				<node id="389" label="Técnico em Recursos Minerais" />
+				<node id="390" label="Técnico em Recursos Pesqueiros" />
+				<node id="391" label="Técnico em Redes de Computadores" />
+				<node id="392" label="Técnico em Refrigeração e Climatização" />
+				<node id="393" label="Técnico em Regência" />
+				<node id="394" label="Técnico em Registros e Informações em Saúde" />
+				<node id="395" label="Técnico em Saneamento" />
+				<node id="396" label="Técnico em Saúde Bucal" />
+				<node id="397" label="Técnico em Secretaria Escolar" />
+				<node id="398" label="Técnico em Secretariado" />
+				<node id="399" label="Técnico em Segurança do Trabalho" />
+				<node id="400" label="Técnico em Seguros" />
+				<node id="401" label="Técnico em Sensores de Aviação" />
+				<node id="402" label="Técnico em Serviço de Restaurante e Bar" />
+				<node id="403" label="Técnico em Serviços de Condomínio" />
+				<node id="404" label="Técnico em Serviços Jurídicos" />
+				<node id="405" label="Técnico em Serviços Públicos" />
+				<node id="406" label="Técnico em Sinais Navais" />
+				<node id="407" label="Técnico em Sinalização Náutica" />
+				<node id="408" label="Técnico em Sistemas a Gás" />
+				<node id="409" label="Técnico em Sistemas de Comutação" />
+				<node id="410" label="Técnico em Sistemas de Energia Renovável" />
+				<node id="411" label="Técnico em Sistemas de Transmissão" />
+				<node id="412" label="Técnico em Soldagem" />
+				<node id="413" label="Técnico em Suprimento" />
+				<node id="414" label="Técnico em Telecomunicações" />
+				<node id="415" label="Técnico em Têxtil" />
+				<node id="416" label="Técnico em Tradução e Interpretação de Libras" />
+				<node id="417" label="Técnico em Transações Imobiliárias" />
+				<node id="418" label="Técnico em Trânsito" />
+				<node id="419" label="Técnico em Transporte Aquaviário" />
+				<node id="420" label="Técnico em Transporte de Cargas" />
+				<node id="421" label="Técnico em Transporte Dutoviário" />
+				<node id="422" label="Técnico em Transporte Metroferroviário" />
+				<node id="423" label="Técnico em Transporte Rodoviário" />
+				<node id="424" label="Técnico em Treinamento de Cães-Guia" />
+				<node id="425" label="Técnico em Vendas" />
+				<node id="426" label="Técnico em Vestuário" />
+				<node id="427" label="Técnico em Vigilância em Saúde" />
+				<node id="428" label="Técnico em Viticultura e Enologia" />
+				<node id="429" label="Técnico em Zootecnia" />
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
