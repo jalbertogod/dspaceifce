@@ -28,7 +28,7 @@ public class RestLike {
     protected EPersonService epersonService = EPersonServiceFactory.getInstance().getEPersonService();
     protected LikeService likeService = LikeServiceFactory.getInstance().getLikeService();
     private static Logger log = Logger.getLogger(RestLike.class);
-
+ 
 
     /**
      * Method to check current status of the service and logged in user.
@@ -42,27 +42,28 @@ public class RestLike {
      *            "rest-dspace-token" containing the token as value.
      * @return status
      */
-    @GET
-    @Path("/set/{handle1}/set/{handle2}")
+    @POST
+    @Path("/set")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public LikeRESP set(@Context HttpHeaders headers,@PathParam("handle1") String handle1,@PathParam("handle2") String handle2) throws UnsupportedEncodingException {
+    public String set(@QueryParam("handle1") String handle1,@QueryParam("handle2") String handle2) throws UnsupportedEncodingException {
         org.dspace.core.Context context = null;	
+        System.out.println("handle1:"+handle1+" handle2:"+handle2);
 
         try {
             context = Resource.createContext();
             EPerson ePerson = context.getCurrentUser();
            
-            likeService.createNewLike(context,handle1,handle2,ePerson);
            
-           // Bookmark bookmark = bookmarkService.create(context);
+           // Bookmark bookmark System.out.println() = bookmarkService.create(context);
           //  bookmark.setTitle("Teste");
             if(ePerson != null) {
+            	likeService.createNewLike(context,handle1,handle2,ePerson);
                 //DB EPerson needed since token won't have full info, need context
                 EPerson dbEPerson = epersonService.findByEmail(context, ePerson.getEmail());
 
                 LikeRESP likeRESP = new LikeRESP(dbEPerson.getEmail(), dbEPerson.getFullName());
                 context.complete();
-                return likeRESP;
+                return "---";
             }else{
             	 context.complete();
             }
@@ -77,7 +78,7 @@ public class RestLike {
         }
 
         //fallback status, unauth
-        return new LikeRESP();
+        return "-----";
     }
 
 

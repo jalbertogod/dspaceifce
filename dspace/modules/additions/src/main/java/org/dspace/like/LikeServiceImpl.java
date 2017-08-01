@@ -14,7 +14,9 @@ import org.springframework.beans.factory.annotation.Required;
 import org.apache.log4j.Logger;
 import org.dspace.handle.Handle;
 import org.dspace.handle.dao.HandleDAO;
-
+import org.dspace.metadataValue.dao.MetadataValueDAO;
+import org.dspace.metadataValue.Constantes;
+import org.dspace.content.MetadataValue;
 
 /**
  *
@@ -24,9 +26,11 @@ import org.dspace.handle.dao.HandleDAO;
 public class LikeServiceImpl implements LikeService {
 	private static Logger log = Logger.getLogger(LikeServiceImpl.class);
     @Autowired(required = true)
-    protected  LikeDAO likeDAO;
+    protected LikeDAO likeDAO;
     @Autowired(required = true)
-    protected  HandleDAO handleDAO;
+    protected MetadataValueDAO metadataValueDAO;
+    @Autowired(required = true)
+    protected HandleDAO handleDAO;
 
    
 
@@ -40,14 +44,19 @@ public class LikeServiceImpl implements LikeService {
     @Override
     public Like createNewLike(Context c, String handle1,String handle2,EPerson ePerson ){
     	try{
+    		//tring uuidObject,String metadatafieldElement,String metadatafieldQualifier
+    		
 	    	Like like2 =  likeDAO.create(c,new Like());
 	    	Handle handleObject =handleDAO.findByHandle(c,handle1+"/"+handle2);
+	    	
 	    	like2.setLikeDate(new Date());
 	    	like2.setHandle(handleObject);
 	    	like2.setEPerson(ePerson);
-	    	System.out.print(like2.getID()+"------------");
+	    	System.out.print(handleObject.getDSpaceObject().getID()+"------------");
 	    	
 	    	likeDAO.save(c,like2);
+	    	MetadataValue metadataValue = metadataValueDAO.getMetadataValue(c, handleObject.getDSpaceObject().getID(),Constantes.LIKE_ELEMENT,Constantes.LIKE_QUALIFIER);
+	    	System.out.print("VALUE METADATA:"+((metadataValue!=null)? metadataValue.getValue() :" NULL VALOR"));
 	    	System.out.print("ID LIKE:"+like2.getID()+"  createNewLike - ALBERTO Teste--:"+handleObject.getResourceTypeId()+"---TESTE");
 	        return  like2;
 	    } catch (SQLException e) {

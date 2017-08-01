@@ -278,7 +278,7 @@
                 <h5><i18n:text>xmlui.dri2xhtml.METS-1.0.item-uri</i18n:text></h5>
                 <span>
                     <xsl:for-each select="dim:field[@element='identifier' and @qualifier='uri']">
-                        <a>
+                        <a class="like_uri" >
                             <xsl:attribute name="href">
                                 <xsl:copy-of select="./node()"/>
                             </xsl:attribute>
@@ -312,6 +312,11 @@
     
     
     <xsl:template name="itemSummaryView-DIM-seloAC">
+   <button class="bt_like" >
+    			<xsl:attribute name="uri"><xsl:value-of select="dim:field[@element='identifier' and @qualifier='uri']"/></xsl:attribute>
+                
+                
+                LIKE</button>
          <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
 		
 		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">

@@ -19,22 +19,26 @@
 	       });
 
 	
-        });
-$.ajax({
+       });
+	$('.bt_like').click(function() {
+		var array=$('a.like_uri').attr("href").split("/");		
+		//alert(array[array.length-1]);
+		$.ajax({
 		
-	      type: 'GET',
-	      contentType: 'application/json',
-	      //dataType: 'json',
-	      data: {handle:'123456789/3'},
-	      url:'/rest/like/set',
+		      type: 'POST',
+		      contentType: 'application/json',
+		      //dataType: 'json',
+		      data: {handle1:'123456789',handle2:'3'},
+		      url:'/rest/like/set?handle1='+array[array.length-2]+'&handle2='+array[array.length-1],
 
 	      success: function(retorno){
 	    
 		      	},
-		        error: function(xhr, textStatus, error){
-		           console.log(xhr);
-		           console.log(textStatus);
-		           console.log(error);
-		        }
+			error: function(xhr, textStatus, error){
+			   console.log(xhr);
+			   console.log(textStatus);
+			   console.log(error);
+			}
 	       });
+ });
 })(jQuery);
