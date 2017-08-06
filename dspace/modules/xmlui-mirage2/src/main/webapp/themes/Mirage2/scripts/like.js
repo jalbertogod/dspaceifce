@@ -52,5 +52,39 @@
 			  
 			}
 	       });
- });
+	 });
+		$('.bt_denuncia').click(function(element) {
+			var array=$('a.like_uri').attr("href").split("/");		
+			//alert(array[array.length-1]);
+			var btDenuncia = $(this);
+			var btDenunciaTmp=btDenuncia.html();
+			btDenuncia.html("Aguarde");
+			$.ajax({
+			
+			      type: 'POST',
+			      contentType: 'application/json',
+			      //dataType: 'json',
+			      data: {handle1:'123456789',handle2:'3'},
+			      url:'/rest/denuncia/set?handle1='+array[array.length-2]+'&handle2='+array[array.length-1],
+
+			      success: function(retorno){
+			    	  	if(retorno.erro == false){
+			    	  		btDenuncia.html("DENUNCIA:"+retorno.countDenuncia);
+			    	  	}else{
+
+						 btDenuncia.html(retorno.mensagem);
+				   		setTimeout(function(){ btDenuncia.html(btDenunciaTmp); }, 3000);
+					}
+			      	},
+				error: function(xhr, textStatus, error){
+					 btDenuncia.html(textStatus);
+					   setTimeout(function(){ btDenuncia.html(btDenunciaTmp); }, 3000);
+				   /*console.log(xhr);
+				   console.log(textStatus);
+				   console.log(error);*/
+				  
+				}
+		       });
+		});
+ 
 })(jQuery);
