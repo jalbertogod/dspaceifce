@@ -20,9 +20,12 @@
 
 	
        });
-	$('.bt_like').click(function() {
+	$('.bt_like').click(function(element) {
 		var array=$('a.like_uri').attr("href").split("/");		
 		//alert(array[array.length-1]);
+		var btLike = $(this);
+		var btLikeTmp=btLike.html();
+		btLike.html("Aguarde");
 		$.ajax({
 		
 		      type: 'POST',
@@ -31,13 +34,22 @@
 		      data: {handle1:'123456789',handle2:'3'},
 		      url:'/rest/like/set?handle1='+array[array.length-2]+'&handle2='+array[array.length-1],
 
-	      success: function(retorno){
-	    
+		      success: function(retorno){
+		    	  	if(retorno.erro == false){
+		    	  		btLike.html("LIKE:"+retorno.countLike);
+		    	  	}else{
+
+					 btLike.html(retorno.mensagem);
+			   		setTimeout(function(){ btLike.html(btLikeTmp); }, 3000);
+				}
 		      	},
 			error: function(xhr, textStatus, error){
-			   console.log(xhr);
+				 btLike.html(textStatus);
+				   setTimeout(function(){ btLike.html(btLikeTmp); }, 3000);
+			   /*console.log(xhr);
 			   console.log(textStatus);
-			   console.log(error);
+			   console.log(error);*/
+			  
 			}
 	       });
  });

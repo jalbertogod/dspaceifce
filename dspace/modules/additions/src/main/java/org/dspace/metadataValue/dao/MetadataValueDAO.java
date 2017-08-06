@@ -24,4 +24,6 @@ public interface MetadataValueDAO extends GenericDAO<MetadataValue>
 {
 	public MetadataValue getMetadataValue(Context context, java.util.UUID uuidObject,String metadatafieldElement,String metadatafieldQualifier)
             throws SQLException;
+	public int countRows(Context context) throws SQLException;
+
 }

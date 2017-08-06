@@ -25,7 +25,7 @@ import org.dspace.eperson.EPerson;
  * 
  */
 @Entity
-@Table(name="like")
+@Table(name="like", uniqueConstraints=@UniqueConstraint(columnNames = {"handle_id", "eperson_id"}))// 
 public class Like implements ReloadableEntity<Integer> {
 
     @Id
@@ -34,7 +34,7 @@ public class Like implements ReloadableEntity<Integer> {
     @Column(name = "like_seq", unique = true, nullable = false, insertable = true, updatable = false)
     private Integer id;
 
-    @Column(name = "like_date")
+   
     @Temporal(TemporalType.TIMESTAMP)
     private Date likeDate;
     @OneToOne(fetch = FetchType.LAZY)
@@ -44,10 +44,20 @@ public class Like implements ReloadableEntity<Integer> {
     @JoinColumn(name = "eperson_id")
     private EPerson ePerson;
     
+    @Transient
+    private transient int countLike;
+    
     protected Like()
     {
 
     }
+    public int getCountLike() {
+        return countLike;
+    }
+    public void setCountLike(int countLike) {
+        this.countLike=countLike;
+    }
+    
     public EPerson getEPerson() {
         return ePerson;
     }

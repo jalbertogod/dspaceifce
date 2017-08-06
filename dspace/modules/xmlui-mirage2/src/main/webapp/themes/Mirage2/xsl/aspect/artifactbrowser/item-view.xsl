@@ -315,8 +315,8 @@
    <button class="bt_like" >
     			<xsl:attribute name="uri"><xsl:value-of select="dim:field[@element='identifier' and @qualifier='uri']"/></xsl:attribute>
                 
-                
-                LIKE</button>
+                LIKE: <xsl:value-of select="dim:field[@element='description' and @qualifier='like']"/>
+                </button>
          <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
 		
 		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">

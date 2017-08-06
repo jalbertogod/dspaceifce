@@ -24,14 +24,18 @@ public class MetadataValueDAOImpl extends AbstractHibernateDAO<MetadataValue>  i
     public MetadataValue getMetadataValue(Context context, java.util.UUID uuidObject,String metadatafieldElement,String metadatafieldQualifier)
             throws SQLException
     {
-    	System.out.println("uuidObject:"+uuidObject+",metadatafieldElement:"+metadatafieldElement+",metadatafieldQualifier:"+metadatafieldQualifier);
-        String queryString = "SELECT m FROM MetadataValue m JOIN FETCH m.metadataField WHERE m.dspace_object_id = :dspace_object_id AND m.metadataField.element = :element AND m.metadataField.qualifier = :qualifier AND ";
-        Query query = createQuery(context, queryString);
-        query.setParameter("element", metadatafieldElement);
-        query.setParameter("qualifier", metadatafieldElement);
-        query.setParameter("dspace_object_id", uuidObject);
-        query.setMaxResults(1);
-        return (MetadataValue) query.uniqueResult();
+       Query query = createQuery(context, "SELECT m FROM MetadataValue m INNER JOIN FETCH m.metadataField  mf INNER JOIN FETCH m.dSpaceObject ob WHERE ob.id = :dspace_object_id AND  mf.element = :element AND mf.qualifier = :qualifier");
+       query.setParameter("element", metadatafieldElement);   
+       query.setParameter("qualifier", metadatafieldQualifier);
+       query.setParameter("dspace_object_id", uuidObject);
+       query.setMaxResults(1);
+       return (MetadataValue) query.uniqueResult();
     }
+    @Override
+    public int countRows(Context context) throws SQLException {
+        return count(createQuery(context, "SELECT count(*) FROM MetadataValue"));
+    }
+
+
   
 }

@@ -10,7 +10,7 @@ import javax.ws.rs.core.*;
 import javax.ws.rs.core.Context;
 
 import org.apache.log4j.Logger;
-import org.dspace.utils.LikeRESP;
+import org.dspace.utils.LikeMessage;
 import org.dspace.like.Like;
 import org.dspace.like.factory.LikeServiceFactory;
 import org.dspace.like.service.LikeService;
@@ -45,40 +45,46 @@ public class RestLike {
     @POST
     @Path("/set")
     @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public String set(@QueryParam("handle1") String handle1,@QueryParam("handle2") String handle2) throws UnsupportedEncodingException {
+    @Produces(MediaType.APPLICATION_JSON)
+    public LikeMessage set(@QueryParam("handle1") String handle1,@QueryParam("handle2") String handle2) throws UnsupportedEncodingException {
         org.dspace.core.Context context = null;	
-        System.out.println("handle1:"+handle1+" handle2:"+handle2);
+        LikeMessage likeMessage = new LikeMessage();
 
         try {
             context = Resource.createContext();
             EPerson ePerson = context.getCurrentUser();
-           
-           
-           // Bookmark bookmark System.out.println() = bookmarkService.create(context);
-          //  bookmark.setTitle("Teste");
             if(ePerson != null) {
-            	likeService.createNewLike(context,handle1,handle2,ePerson);
-                //DB EPerson needed since token won't have full info, need context
+            	likeMessage.setHandle1(handle1);
+            	likeMessage.setHandle2(handle2);
+            	Like like= likeService.createNewLike(context,handle1,handle2,ePerson);
                 EPerson dbEPerson = epersonService.findByEmail(context, ePerson.getEmail());
-
-                LikeRESP likeRESP = new LikeRESP(dbEPerson.getEmail(), dbEPerson.getFullName());
                 context.complete();
-                return "---";
+                if(like != null){
+                	likeMessage.setCountLike(like.getCountLike());
+                	likeMessage.setErro(false);
+                	likeMessage.setAuthenticated(true);
+                	likeMessage.setIdLike(like.getID());
+                }
+                likeMessage.setMensagem("Dados registrados com sucesso");
+                return likeMessage;
             }else{
-            	 context.complete();
+            	likeMessage.setErro(true);
+            	likeMessage.setAuthenticated(false);
+            	likeMessage.setMensagem("Não foi possível autenticar com o serviço");
             }
-           
+            context.complete();
         } catch (ContextException e)
         {
+        	likeMessage.setErro(true);
+        	likeMessage.setMensagem("Like context error: " + e.getMessage());
             Resource.processException("Like context error: " + e.getMessage(), context);
         } catch (SQLException e) {
+        	likeMessage.setMensagem("Like  db lookup error:" + e.getMessage());
             Resource.processException("Like  db lookup error: " + e.getMessage(), context);
         } finally {
             context.abort();
         }
-
-        //fallback status, unauth
-        return "-----";
+        return likeMessage;
     }
 
 
