@@ -59,5 +59,7 @@
     <bean class="org.dspace.xmlworkflow.storedcomponents.dao.impl.XmlWorkflowItemDAOImpl"/>
 
  	<bean class="org.dspace.like.dao.impl.LikeDAOImpl"/>
+ 	
+ 	<bean class="org.dspace.metadataValue.dao.impl.MetadataValueDAOImpl"/>
 
 </beans>
