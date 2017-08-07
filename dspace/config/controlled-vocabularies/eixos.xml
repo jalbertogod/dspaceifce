@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Eixos Tecnológicos
+-->
+
+<node id="eixos" label="Eixos Tecnológicos">
+	<isComposedBy>
+		<node id="eixosTecnicos" label="Eixos Tecnológicos dos Cursos Técnicos">
+			<isComposedBy>
+				<node id="011" label="AMBIENTE E SAÚDE" />
+				<node id="012" label="CONTROLE E PROCESSOS INDUSTRIAIS" />
+				<node id="013" label="DESENVOLVIMENTO EDUCACIONAL E SOCIAL" />
+				<node id="018" label="GESTÃO E NEGÓCIOS" />
+				<node id="019" label="INFORMAÇÃO E COMUNICAÇÃON" />
+				<node id="020" label="INFRAESTRUTURA" />
+				<node id="021" label="MILITAR" />
+				<node id="022" label="PRODUÇÃO ALIMENTÍCIA" />
+				<node id="023" label="PRODUÇÃO CULTURAL E DESIGN" />
+				<node id="024" label="PRODUÇÃO INDUSTRIAL" />
+				<node id="025" label="RECURSOS NATURAIS" />
+				<node id="026" label="SEGURANÇA" />
+				<node id="027" label="TURISMO, HOSPITALIDADE E LAZER" />
+			</isComposedBy>
+		</node>
+		
+		<node id="eixosSuperiores" label="Eixos Tecnológicos dos Cursos Superiores de Tecnologia">
+			<isComposedBy>
+				<node id="028" label="Ambiente e Saúde" />
+				<node id="029" label="Apoio Escolar" />
+				<node id="030" label="Controle e Processos Industriais" />
+				<node id="031" label="Gestão e Negócios" />
+				<node id="032" label="Hospitalidade e Lazer" />
+				<node id="033" label="Informação e Comunicação" />
+				<node id="034" label="Infraestrutura" />
+				<node id="035" label="Militar" />
+				<node id="036" label="Produção Alimentícia" />
+				<node id="037" label="Produção Cultural e Design" />
+				<node id="038" label="Produção Industrial" />
+				<node id="039" label="Recursos Naturais" />
+				<node id="040" label="Segurança" />
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
