@@ -6,17 +6,17 @@
         <!--
          NOTE: If you are looking for the Hibernate database connection info,
          it is initialized via the beans in
-         [dspace.dir]/config/spring/api/core-hibernate.xml
+         [dspace.dir]/config/spring/api/core-hibernate.xml validate
         -->
 
-        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.hbm2ddl.import_files_sql_extractor">org.hibernate.tool.hbm2ddl.SingleLineSqlCommandExtractor</property>
         <property name="hibernate.connection.autocommit">false</property>
         <property name="hibernate.jdbc.batch_size">20</property>
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
         <!--Debug property that can be used to display the sql-->
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
 
         <!--Second level cache configuration-->
         <property name="hibernate.cache.use_query_cache">true</property>
@@ -79,6 +79,9 @@
         <mapping class="org.dspace.xmlworkflow.storedcomponents.PoolTask"/>
         <mapping class="org.dspace.xmlworkflow.storedcomponents.WorkflowItemRole"/>
         <mapping class="org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem"/>-->
-
+        
+        <mapping class="org.dspace.like.Like"/>
+        <mapping class="org.dspace.denuncia.Denuncia"/>
+		
     </session-factory>
 </hibernate-configuration>
