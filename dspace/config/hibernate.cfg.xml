@@ -81,6 +81,7 @@
         <mapping class="org.dspace.xmlworkflow.storedcomponents.XmlWorkflowItem"/>-->
         
         <mapping class="org.dspace.like.Like"/>
+        <mapping class="org.dspace.denuncia.Denuncia"/>
 		
     </session-factory>
 </hibernate-configuration>

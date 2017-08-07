@@ -47,5 +47,6 @@
     <!--Configurable workflow services, uncomment to enable-->
     <!--<bean id="workflowServiceFactory" class="org.dspace.xmlworkflow.factory.XmlWorkflowServiceFactoryImpl"/>-->
     <bean id="likeServiceFactory" class="org.dspace.like.factory.LikeServiceFactoryImpl"/>
+    <bean id="denunciaServiceFactory" class="org.dspace.denuncia.factory.DenunciaServiceFactoryImpl"/>
 
 </beans>

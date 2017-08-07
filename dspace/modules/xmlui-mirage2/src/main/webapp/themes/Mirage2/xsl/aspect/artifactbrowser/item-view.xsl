@@ -317,6 +317,12 @@
                 
                 LIKE: <xsl:value-of select="dim:field[@element='description' and @qualifier='like']"/>
                 </button>
+                
+                  <button class="bt_denuncia" >
+    			<xsl:attribute name="uri"><xsl:value-of select="dim:field[@element='identifier' and @qualifier='uri']"/></xsl:attribute>
+                
+                DENÚNCIA: <xsl:value-of select="dim:field[@element='description' and @qualifier='denuncia']"/>
+                </button>
          <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
 		
 		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">
