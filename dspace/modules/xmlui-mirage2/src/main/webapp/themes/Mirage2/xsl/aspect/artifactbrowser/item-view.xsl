@@ -323,42 +323,47 @@
                 
                 DENÚNCIA: <xsl:value-of select="dim:field[@element='description' and @qualifier='denuncia']"/>
                 </button>
-         <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]">
-		
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='sim'">
-	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Sim |" title="Selo de Acessibilidade" height="55" width="55" style="margin-right:0.5em;"/> 
-	    	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='não'">
-	       		<img src="{$theme-path}images/boneco.png" alt="| Selo AC: Não |" title="Selo de Acessibilidade" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/>  
-	    	</xsl:if>
-
-	  </xsl:if>
+         <xsl:choose>
+			 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='yes'"> 
+				<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado para Acesso Universal - AC" title="Material foi validado para Acesso Universal - AC" height="55" width="55" style="margin-right:0.5em;"/> 
+			 </xsl:when>
+			<xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='no'">
+		   	  <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado para Acesso Universal - AC" title="Material não foi validado para Acesso Universal - AC" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
+		  	</xsl:when>
+		     <xsl:otherwise> 
+				<img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por validação para Acesso Universal - AC" title="Material ainda não passou por validação para Acesso Universal - AC" height="55" width="55" style="margin-right:0.5em;"/> 
+			</xsl:otherwise>
+		</xsl:choose>
     </xsl:template>
 
     <xsl:template name="itemSummaryView-DIM-seloCT">
-        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]">
-				
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='sim'">
-	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Sim |" title="Selo de Conteúdo" height="55" width="55" style="margin-right:0.5em;"/> 
-	    	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='não'">
-	       		<img src="{$theme-path}images/livro.png" alt="| Selo CT: Não |" title="Selo de Conteúdo" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
-	</xsl:if>
-
-	 </xsl:if>
+	    <xsl:choose>
+			 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='yes'"> 
+				<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado pelo Comitê Técnico Científico - CT" title="Material foi validado pelo Comitê Técnico Científico
+	 - CT" height="55" width="55" style="margin-right:0.5em;"/> 
+			 </xsl:when>
+			<xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='no'">
+		   	  <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado pelo Comitê Técnico Científico - CT" title="Material não foi validado pelo Comitê Técnico Científico
+	 - CT" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
+		  	</xsl:when>
+		     <xsl:otherwise> 
+				<img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por validação do Comitê Técnico Científico - CT" title="Material ainda não passou por validação do Comitê Técnico Científico - CT"  height="55" width="55" style="margin-right:0.5em;"/> 
+			</xsl:otherwise>
+		</xsl:choose>
     </xsl:template>
 	
     <xsl:template name="itemSummaryView-DIM-seloDI">
-        <xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]">
-                  
-		<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='sim'">
-               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Sim |" title="Selo de Design Institucional" height="55" width="55" style="margin-right:0.5em;"/>  
-            	</xsl:if>
-	    	<xsl:if test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='não'">
-               		<img src="{$theme-path}images/profs.png" alt="| Selo DI: Não |" title="Selo de Design Institucional" height="55" width="55"  style="filter:grayscale(100%); margin-right:0.5em;"/>  
-            	</xsl:if>
-
-         </xsl:if>    
+    	    <xsl:choose>
+			 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='yes'"> 
+				<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado por Instituição de Design Instrucional - DI" title="Material foi validado por Instituição de Design Instrucional - DI" height="55" width="55" style="margin-right:0.5em;"/> 
+			 </xsl:when>
+			<xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='no'">
+		   	  <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado por Instituição de Design Instrucional - DI" title="Material não foi validado por Instituição de Design Instrucional - DI" height="55" width="55" style="filter:grayscale(100%); margin-right:0.5em;"/> 
+		  	</xsl:when>
+		     <xsl:otherwise> 
+				<img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por Instituição de Design Instrucional - DI" title="Material ainda não passou por Instituição de Design Instrucional - DI" height="55" width="55" style="margin-right:0.5em;"/> 
+			</xsl:otherwise>
+		</xsl:choose>  
     </xsl:template>
     
     

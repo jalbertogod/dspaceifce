@@ -109,8 +109,8 @@
      
      <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>validationDI</dc-element>
-         <dc-qualifier></dc-qualifier>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoDI</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Validação DI</label>
      <visibility>workflow</visibility>
@@ -121,8 +121,8 @@
      
      <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>validationCT</dc-element>
-         <dc-qualifier></dc-qualifier>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoCT</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Validação CT</label>
      <visibility>workflow</visibility>
@@ -133,11 +133,11 @@
      
      <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>validationAC</dc-element>
-         <dc-qualifier></dc-qualifier>
+         <dc-element>description</dc-element>
+         <dc-qualifier>materialValidadoAC</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Validação AC</label>
-     <visibility>workflow</visibility>
+         <visibility otherwise="readonly">workflow</visibility>
          <input-type value-pairs-name="common_validationAC">dropdown</input-type>
          <hint>Essa submissão possui Validação AC?</hint>
          <required></required>
