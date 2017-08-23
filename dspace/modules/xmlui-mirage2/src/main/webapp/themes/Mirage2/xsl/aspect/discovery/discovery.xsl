@@ -287,39 +287,46 @@
                     </xsl:choose>
                     
   					<br/>
+			
+			
 			<span class="h4">   <small> 			                 
-		            <xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoAC'))]">
-				
-				<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoAC'))]/dri:item='sim'">
-                               		<img src="{$theme-path}images/boneco.png" title="Selo de Acessibilidade" alt="| Selo AC: Sim |" height="35" width="35" style="margin-right:0.3em;"/> 
-                            	</xsl:if>
-			    	<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoAC'))]/dri:item='não'">
-                               		<img src="{$theme-path}images/boneco.png" title="Selo de Acessibilidade" alt="| Selo AC: Não |" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
-                            	</xsl:if>
-
-		            </xsl:if>
+		         <xsl:choose>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoAC' and descendant::text()]='yes'"> 
+						<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado para Acesso Universal - AC" title="Material foi validado para Acesso Universal - AC" height="35" width="35" style="margin-right:0.3em;"/> 
+					 </xsl:when>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='no'">
+				   	    <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado para Acesso Universal - AC" title="Material não foi validado para Acesso Universal - AC" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
+				  	 </xsl:when>
+			         <xsl:otherwise> 
+					    <img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por validação para Acesso Universal - AC" title="Material ainda não passou por validação para Acesso Universal - AC" height="35" width="35" style="margin-right:0.3em;"/> 
+				     </xsl:otherwise>
+			     </xsl:choose>
 			    
-		            <xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoCT'))]">
-				
-				<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoCT'))]/dri:item='sim'">
-                               		<img src="{$theme-path}images/livro.png" title="Selo de Conteúdo" alt="| Selo CT: Sim |" height="35" width="35" style="margin-right:0.3em;"/> 
-                            	</xsl:if>
-			    	<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoCT'))]/dri:item='não'">
-                               		<img src="{$theme-path}images/livro.png" title="Selo de Conteúdo" alt="| Selo CT: Não |" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
-                            	</xsl:if>
-
-		            </xsl:if>
+		         <xsl:choose>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='yes'"> 
+						<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado pelo Comitê Técnico Científico - CT" title="Material foi validado pelo Comitê Técnico Científico
+			 - CT" height="35" width="35" style="margin-right:0.3em;"/> 
+					 </xsl:when>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoCT' and descendant::text()]='no'">
+				   	  <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado pelo Comitê Técnico Científico - CT" title="Material não foi validado pelo Comitê Técnico Científico
+			 - CT" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
+				  	 </xsl:when>
+				     <xsl:otherwise> 
+						<img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por validação do Comitê Técnico Científico - CT" title="Material ainda não passou por validação do Comitê Técnico Científico - CT"  height="35" width="35" style="margin-right:0.3em;"/> 
+					</xsl:otherwise>
+				</xsl:choose>
 			   
-		            <xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoDI'))]">
-		                  
-				<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoDI'))]/dri:item='sim'">
-                               		<img src="{$theme-path}images/profs.png" title="Selo de Design Institucional" alt="| Selo DI: Sim |" height="35" width="35" style="margin-right:0.3em;"/> 
-                            	</xsl:if>
-			    	<xsl:if test="dri:list[@n=(concat($handle, ':dc.description.materialValidadoDI'))]/dri:item='não'">
-                               		<img src="{$theme-path}images/profs.png" title="Selo de Design Institucional" alt="| Selo DI: Não |" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
-                            	</xsl:if>
-
-		            </xsl:if>    
+			    <xsl:choose>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='yes'"> 
+						<img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material foi validado por Instituição de Design Instrucional - DI" title="Material foi validado por Instituição de Design Instrucional - DI" height="35" width="35" style="margin-right:0.3em;"/> 
+					 </xsl:when>
+					 <xsl:when test="dim:field[@element='description' and @qualifier='materialValidadoDI' and descendant::text()]='no'">
+				   	    <img src="{$theme-path}images/livro.png" alt="Imagem indicando que o material não foi validado por Instituição de Design Instrucional - DI" title="Material não foi validado por Instituição de Design Instrucional - DI" height="35" width="35" style="filter:grayscale(100%); margin-right:0.3em;"/> 
+				  	 </xsl:when>
+				     <xsl:otherwise> 
+						<img src="{$theme-path}images/aguardando.png" alt="Imagem indicando que o material ainda não passou por Instituição de Design Instrucional - DI" title="Material ainda não passou por Instituição de Design Instrucional - DI" height="35" width="35" style="margin-right:0.3em;"/> 
+					</xsl:otherwise>
+				</xsl:choose>  
                  	</small></span>
                     
                 </div>
