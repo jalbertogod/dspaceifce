@@ -97,21 +97,22 @@
                                 </div>
                             </div>
 
-                            <div id="main-container" class="container">
+                            <div id="main" class="container">
 
-                                <div class="row row-offcanvas row-offcanvas-right">
+                                <div class="container">
                                     <div class="horizontal-slider clearfix">
-                                        <div class="col-xs-12 col-sm-12 col-md-9 main-content">
+                                        <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
                                             <xsl:apply-templates select="*[not(self::dri:options)]"/>
 
                                             <div class="visible-xs visible-sm">
                                                 <xsl:call-template name="buildFooter"/>
                                             </div>
                                         </div>
-                                        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                                         
+                                        <!-- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                                             <xsl:apply-templates select="dri:options"/>
-                                        </div>
-
+                                        </div>  -->
+                                        
                                     </div>
                                 </div>
 
@@ -320,6 +321,22 @@
                 <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">&#160;</script>
             </xsl:if>
 
+            <script type="javascript">
+                $(".owl-carousel").owlCarousel({
+                  nav: true,
+                  loop: true,
+                  margin: 20,
+                  responsive: {
+                    0: { items: 2 },
+                    850: { items: 3 },
+                    1000: { items: 4 }
+                  },
+                  navText: [
+                    '<a class="btn-floating white waves-effect"><i class="material-icons grey-text">arrow_back</i></a>',
+                    '<a class="btn-floating white waves-effect"><i class="material-icons grey-text">arrow_forward</i></a>'
+                  ]
+                });
+            </script>
         </head>
     </xsl:template>
 
@@ -330,8 +347,8 @@
 
 
         <header>
-            <div class="navbar navbar-default navbar-static-top" role="navigation">
-                <div class="container">
+            <div class="navbar navbar-fixed-top" role="navigation">
+                <div class="container ">
                     <div class="navbar-header">
 
                         <button type="button" class="navbar-toggle" data-toggle="offcanvas">
@@ -436,9 +453,6 @@
                                                 <xsl:text> </xsl:text>
                                                 <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
                             dri:metadata[@element='identifier' and @qualifier='lastName']"/>
-                            
-                            <input type="hidden" name="email_address_auth" id="email_address_auth" 
-                            value="{/dri:document/dri:meta/dri:userMeta/dri:metadata[@element='identifier' and @qualifier='email']}" />
                                                 &#160;
                                                 <b class="caret"/>
                                             </span>
@@ -813,6 +827,7 @@
                         window.publication.contextPath= '</xsl:text><xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/><xsl:text>';</xsl:text>
             <xsl:text>window.publication.themePath= '</xsl:text><xsl:value-of select="$theme-path"/><xsl:text>';</xsl:text>
         </script>
+
         <!--TODO concat & minify!-->
 
         <script>
